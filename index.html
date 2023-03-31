@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="favicon.ico">
+    <script language="javascript" type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+  <script language="javascript" type="text/javascript" src="cryptozombies_abi.js"></script>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CryptoZombies Front-End</title>
+    <meta name="description" content="Core HTML Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/lightcase/lightcase.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="https://file.myfontastic.com/7vRKgqrN3iFEnLHuqYhYuL/icons.css" rel="stylesheet">
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
+
+	<div class="boxed-page">
+		<nav id="gtco-header-navbar" class="navbar navbar-expand-lg py-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="lnr lnr-sun"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-nav-header">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://docs.soliditylang.org/en/latest/" target='_blank'>Learn Solidity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://trufflesuite.com/ganache/" target='_blank'>Ganache</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="members_1.html">Group Members</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</nav>
+
+<div class="jumbotron d-flex align-items-center" style="background-image: url(img/hero-2_1.jpg)">
+  <div class="container text-center">
+    <h1 class="display-2 mb-4"><strong>Advance Blockchain Technologies!</strong></h1>
+    <p><strong>
+        This is the CryptoZombie midterm project of CPSC - 559<br>Advance Blockchain Technologies.</strong>
+    </p>
+  </div>
+</div>	
+
+<section id="gtco-who-we-are" class="bg-white">
+    <div class="container">
+      <!--Displaying Details After Button Click-->
+      <div id="txStatus"></div>
+      <div id="zombies"></div>
+      <!--EOD Displaying Details After Button Click-->
+        <div class="section-content">
+            <div class="title-wrap">
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 col-sm-6 ">
+                    <img class="rounded-circle" src="https://i.gifer.com/7T47.gif" alt="Generic placeholder image" width="140" height="140">
+                    <h5 class="mb-4">Zombile Details</h5>
+                    <p>The below button helps to show the details of the zombie that has been created.</p>
+                    <p><a class="btn showZombieButton" href="#" role="button">Show Zombie</a></p>
+                </div>
+                <!-- /.col-md-4 col-sm-6  -->
+                <div class="col-md-4 col-sm-6 ">
+                    <img class="rounded-circle" src="https://i.gifer.com/7Mpw.gif" alt="Generic placeholder image" width="140" height="140">
+                    <h5 class="mb-4">Create Zombie</h5>
+                    <p>The below button create a new zombie consuming some test ether.</p>
+                    <p><a class="btn createzombieButton" href="#" role="button">Respawn Zombie</a></p>
+                </div>
+                <!-- /.col-md-4 col-sm-6  -->
+                <div class="col-md-4 col-sm-6 ">
+                    <img class="rounded-circle" src="https://i.gifer.com/ZWdx.gif" alt="Generic placeholder image" width="140" height="140">
+                    <h5 class="mb-4">Level Up</h5>
+                    <p>The below button levels up the already existing zombie.</p>
+                    <p><a class="btn levelupButton" href="#" role="button">Level Up</a></p>
+                </div>
+                <!-- /.col-md-4 col-sm-6  -->
+                <div class="col-md-4 col-sm-6 ">
+                    <img class="rounded-circle" src="https://i.gifer.com/1kLR.gif" alt="Generic placeholder image" width="140" height="140">
+                    <h5 class="mb-4">Feed On Kitty</h5>
+                    <p>The below button makes to zombie to feed on the kitty.</p>
+                    <p><a class="btn feedzombieButton" href="#" role="button">Feed on Kitty</a></p>
+                </div>
+                <!-- /.col-md-4 col-sm-6  -->
+                <div class="col-md-4 col-sm-6 ">
+                    <img class="rounded-circle" src="https://i.gifer.com/PLeI.gif" alt="Generic placeholder image" width="140" height="140">
+                    <h5 class="mb-4">Zombie Factory</h5>
+                    <p>The below button produces multiple zombie at once.</p>
+                    <p><a class="btn zombiefactoryButton" href="#" role="button">Zombie Factory</a></p>
+                </div>
+                <!-- /.col-md-4 col-sm-6  -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </div>
+</section>		<!-- Counter Section -->
+
+
+
+<!-- SCRIPTS FOR ZOMBIE DAPP-->
+<script>
+
+    var cryptoZombies;
+    var userAccount;
+    const showZombieButton = document.querySelector('.showZombieButton');
+    const createzombieButton = document.querySelector('.createzombieButton');
+    const levelupButton = document.querySelector('.levelupButton');
+    const feedzombieButton = document.querySelector('.feedzombieButton')
+    const zombiefactoryButton=document.querySelector('.zombiefactoryButton')
+
+    function startApp() {
+	
+      //ZombieOwnership contratc address
+      var cryptoZombiesAddress = "0x3cCa42c9Ea4aDc0A3417255FeB026C9AA6a26d76";
+      
+
+      cryptoZombies = new web3.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
+
+       cryptoZombies.events.Transfer({ filter: { _to: userAccount } })
+        .on("data", function (event) {
+          let data = event.returnValues;
+          getZombiesByOwner(userAccount).then(displayZombies);
+        }).on("error", console.error);
+    }
+
+    function displayZombies(ids) {
+      $("#zombies").empty();
+      for (id of ids) {
+
+        getZombieDetails(id)
+          .then(function (zombie) {
+
+
+            $("#zombies").append(`<div class="zombie">
+              <ul>
+                <li>Name: ${zombie.name}</li>
+                <li>DNA: ${zombie.dna}</li>
+                <li>Level: ${zombie.level}</li>
+                <li>Wins: ${zombie.winCount}</li>
+                <li>Losses: ${zombie.lossCount}</li>
+                <li>Ready Time: ${zombie.readyTime}</li>
+              </ul>
+            </div>`);
+          });
+      }
+
+    }
+    
+    
+
+    function createRandomZombie(name) {
+
+
+      $("#txStatus").text("Creating new zombie on the blockchain. This may take a while...");
+
+      return cryptoZombies.methods.createRandomZombie(name)
+        .send({ from: userAccount })
+        .on("receipt", function (receipt) {
+          $("#txStatus").text("Successfully created " + name + "!");
+
+          getZombiesByOwner(userAccount).then(displayZombies);
+        })
+        .on("error", function (error) {
+
+          $("#txStatus").text(error);
+        });
+    }
+
+    function feedOnKitty(zombieId, kittyId) {
+      $("#txStatus").text("Eating a kitty. This may take a while...");
+      return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
+        .send({ from: userAccount })
+        .on("receipt", function (receipt) {
+          $("#txStatus").text("Ate a kitty and spawned a new Zombie!");
+          getZombiesByOwner(userAccount).then(displayZombies);
+        })
+        .on("error", function (error) {
+          $("#txStatus").text(error);
+        });
+    }
+
+    function levelUp(zombieId) {
+      $("#txStatus").text("Leveling up your zombie...");
+      return cryptoZombies.methods.levelUp(zombieId)
+        .send({ from: userAccount, value: web3.utils.toWei("0.001", "ether") })
+        .on("receipt", function (receipt) {
+          $("#txStatus").text("Power overwhelming! Zombie successfully leveled up");
+        })
+        .on("error", function (error) {
+          $("#txStatus").text(error);
+        });
+    }
+
+    function getZombieDetails(id) {
+      return cryptoZombies.methods.zombies(id).call()
+    }
+
+    function zombieToOwner(id) {
+      return cryptoZombies.methods.zombieToOwner(id).call()
+    }
+
+    function getZombiesByOwner(owner) {
+      return cryptoZombies.methods.getZombiesByOwner(owner).call()
+    }
+
+    window.addEventListener('load', async () => {
+    // Modern dapp browsers...
+    if (window.ethereum) {
+        window.web3 = new Web3(ethereum);
+        try {
+            // Request account access if needed
+            const accounts = await ethereum.enable();
+            // Acccounts now exposed
+            userAccount = accounts[0];
+            startApp()
+        } catch (error) {
+            // User denied account access...
+        }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+        userAccount = web3.eth.accounts[0];
+        startApp()
+    }
+    // Non-dapp browsers...
+    else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+    }
+   });
+ 
+
+
+   ethereum.on('accountsChanged', (accounts) => {
+       window.location.reload();
+   });
+
+   ethereum.on('chainChanged', (chainId) => {
+       window.location.reload(); 
+   });  
+
+ 
+    createzombieButton.addEventListener('click', () => {
+      createRandomZombie(userAccount);
+
+    });
+
+    showZombieButton.addEventListener('click', () => {
+      getZombiesByOwner(userAccount)
+            .then(displayZombies);
+
+    });
+
+    feedzombieButton.addEventListener('click', () => {
+      getZombiesByOwner(userAccount)
+          .then(feedOnKitty(2,1));
+    })
+
+    zombiefactoryButton.addEventListener('click', () => {
+      createRandomZombie(userAccount);
+    })
+
+    levelupButton.addEventListener('click', () => {
+      getZombiesByOwner(userAccount)
+            .then(levelUp);
+
+    });
+
+  </script>
+<!--EOD SCRIPTS FOR ZOMBIE DAPP-->
+
+</body>
+</html>
