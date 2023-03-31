@@ -62,7 +62,7 @@ To install the project, follow these steps:
 
 ## **Screenshots for References:**
 Below are the screenshots of the web application with proper connectivity with the backend and Metamask:
-![Getting Started](./sample_1.jpg)
+![Getting Started](https://github.com/nilayjain12/CryptoZombie-Web3-Connectivity/blob/main/sample_1.JPG)
 
 ## **Additional Information:**
 The project can be further extended by adding more features and functionalities like creating a user profile, integrating with other blockchain networks, and many more. The possibilities are endless.
